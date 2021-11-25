@@ -42,6 +42,12 @@ task HW10(type: Test) { //Запуск регрессионных тестов �
     }
 }
 
+task HW10(type: Test) { //Запуск регрессионных тестов на 3-ёх платформах
+    useJUnitPlatform {
+        includeTags 'HW10'
+    }
+}
+
 tasks.withType(Test) {
     useJUnitPlatform()
 

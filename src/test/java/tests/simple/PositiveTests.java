@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PositiveTests {
+    /*
     @Test
     void test0() {
         assertTrue(true);
@@ -54,4 +55,6 @@ public class PositiveTests {
     void test9() {
         assertTrue(true);
     }
+
+     */
 }
