@@ -36,6 +36,11 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
+task HW10(type: Test) { //Запуск регрессионных тестов на 3-ёх платформах
+    useJUnitPlatform {
+        includeTags 'HW10'
+    }
+}
 
 tasks.withType(Test) {
     useJUnitPlatform()
