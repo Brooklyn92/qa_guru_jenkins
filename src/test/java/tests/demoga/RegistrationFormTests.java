@@ -1,14 +1,16 @@
 package tests.demoga;
+
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class RegistrationFormTests {
+public class RegistrationFormTests extends TestBase {
     Faker faker = new Faker();
 
     String firstName = faker.name().firstName(),
