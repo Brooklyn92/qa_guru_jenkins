@@ -1,11 +1,13 @@
+
 package tests.simple;
 
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PositiveTests {
-    /*
+public class PositiveTests extends TestBase {
+
     @Test
     void test0() {
         assertTrue(true);
@@ -56,5 +58,5 @@ public class PositiveTests {
         assertTrue(true);
     }
 
-     */
+
 }

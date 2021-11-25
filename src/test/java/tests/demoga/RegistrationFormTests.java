@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class RegistrationFormTests extends TestBase {
     Faker faker = new Faker();
 
-    String firstName = faker.name().firstName(),
+    String  firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
             gender = "Other",

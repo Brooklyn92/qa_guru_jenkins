@@ -2,11 +2,12 @@ package tests.simple;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class SkippedTests {
-    /*
+public class SkippedTests extends TestBase {
+
     @Test
     @Disabled
     void test0() {
@@ -36,6 +37,6 @@ public class SkippedTests {
     void test4() {
         assertFalse(true);
     }
-    */
+
 
 }

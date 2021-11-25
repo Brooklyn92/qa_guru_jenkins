@@ -1,11 +1,12 @@
 package tests.simple;
 
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class NegativeTests {
-    /*
+public class NegativeTests extends TestBase {
+
     @Test
     void test0() {
         assertFalse(true);
@@ -46,5 +47,4 @@ public class NegativeTests {
         assertFalse(true);
     }
 
-     */
 }
