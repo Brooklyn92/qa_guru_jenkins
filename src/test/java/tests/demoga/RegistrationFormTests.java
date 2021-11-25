@@ -1,5 +1,6 @@
 package tests.demoga;
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 import static com.codeborne.selenide.Condition.text;
@@ -27,7 +28,7 @@ public class RegistrationFormTests extends TestBase {
             currentAddress = faker.address().fullAddress(),
             state = "Uttar Pradesh",
             city = "Merrut";
-
+    @Tag("HW10")
     @Test
     void successfulFillFormTest() {
         step("Open students registration form", () -> {
