@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TestIssueInGitHub {
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final Integer ISSUE_NUMBER = 68;
+    private static final String REPOSITORYNAME = "eroshenkoam/allure-example";
+    private static final Integer ISSUE_NUMBER_SEARCH = 68;
 
     @BeforeAll
     public static void set(){
@@ -27,12 +27,12 @@ public class TestIssueInGitHub {
 
         step("Ищем репозиторий", () ->{
             $(".header-search-input").click();
-            $(".header-search-input").setValue(REPOSITORY);
+            $(".header-search-input").setValue(REPOSITORYNAME);
             $(".header-search-input").submit();
         });
 
-        step("Переходим в найденный репозиторий", ()-> {
-            $(By.linkText(REPOSITORY)).click();
+        step("Переходим в репозиторий", ()-> {
+            $(By.linkText(REPOSITORYNAME)).click();
         });
 
 
@@ -42,7 +42,7 @@ public class TestIssueInGitHub {
 
 
         step("Убеждаемся, что номер issue отображается", ()-> {
-            $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
+            $(withText("#" + ISSUE_NUMBER_SEARCH)).should(Condition.visible);
         });
     }
 }
