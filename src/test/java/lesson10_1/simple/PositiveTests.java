@@ -1,8 +1,7 @@
 
-package tests.simple;
+package lesson10_1.simple;
 
 import org.junit.jupiter.api.Test;
-import tests.TestBase;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
