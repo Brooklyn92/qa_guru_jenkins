@@ -16,17 +16,18 @@ public class TestIssueInGitHub {
     @BeforeAll
     public static void set(){
         Configuration.startMaximized=true;
+        Configuration.holdBrowserOpen=true;
     }
 
     @Test
     public void testGit(){
-        step("Открываем главную страницу", () -> {
+        step("Открываем главную страницу GitHub", () -> {
             open("https://github.com/");
         });
 
         step("Ищем репозиторий", () ->{
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
+            $(".header-search-input").setValue(REPOSITORY);
             $(".header-search-input").submit();
         });
 
