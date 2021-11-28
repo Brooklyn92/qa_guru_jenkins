@@ -16,6 +16,7 @@ public class TestIssueInGitHub {
     @BeforeAll
     public static void set(){
         Configuration.startMaximized=true;
+        Configuration.holdBrowserOpen=true;
     }
 
     @Test
