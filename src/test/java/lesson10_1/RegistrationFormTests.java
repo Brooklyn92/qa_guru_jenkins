@@ -1,9 +1,8 @@
-package lesson10_1.simple;
+package lesson10_1;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import lesson10_1.simple.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
