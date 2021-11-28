@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TestIssueInGitHub {
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
+    private static final String REPOSITORYNAME = "eroshenkoam/allure-example";
     private static final Integer ISSUE_NUMBER = 68;
 
     @BeforeAll
@@ -27,12 +27,12 @@ public class TestIssueInGitHub {
 
         step("Ищем репозиторий", () ->{
             $(".header-search-input").click();
-            $(".header-search-input").setValue(REPOSITORY);
+            $(".header-search-input").setValue(REPOSITORYNAME);
             $(".header-search-input").submit();
         });
 
         step("Переходим в найденный репозиторий", ()-> {
-            $(By.linkText(REPOSITORY)).click();
+            $(By.linkText(REPOSITORYNAME)).click();
         });
 
 
