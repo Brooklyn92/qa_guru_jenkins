@@ -1,4 +1,4 @@
-package lesson10_1;
+package lesson10_and_11;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 //import helpers.Attach;

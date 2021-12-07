@@ -1,6 +1,7 @@
-package lesson10_1;
+package lesson10_and_11.tests;
 
 import com.github.javafaker.Faker;
+import lesson10_and_11.TestBase;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
