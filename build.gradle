@@ -36,13 +36,9 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-task HW10(type: Test) { //Запуск регрессионных тестов на 3-ёх платформах
-    useJUnitPlatform {
-        includeTags 'HW10'
-    }
-}
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -51,5 +47,11 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task properties_tests(type: Test){
+    useJUnitPlatform {
+        includeTags "properties"
     }
 }
