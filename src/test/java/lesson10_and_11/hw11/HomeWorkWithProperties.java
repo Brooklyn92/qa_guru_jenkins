@@ -2,7 +2,6 @@ package lesson10_and_11.hw11;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Allure;
 import io.qameta.allure.AllureLifecycle;
-import lesson10_and_11.TestBase;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
@@ -12,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class HomeWorkWithProperties extends TestBase {
+public class HomeWorkWithProperties extends TestBaseHW11 {
     private static final String REPOSITORY = "eroshenkoam/allure-example";
 
     @Test
