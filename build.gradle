@@ -51,8 +51,9 @@ tasks.withType(Test) {
     }
 }
 
-task properties_tests(type: Test){
+task hw_11(type: Test){
     useJUnitPlatform {
-        includeTags "properties"
+        includeTags "hw11"
+        exclude "properties"
     }
 }

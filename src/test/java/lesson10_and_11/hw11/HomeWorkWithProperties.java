@@ -3,6 +3,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Allure;
 import io.qameta.allure.AllureLifecycle;
 import lesson10_and_11.TestBase;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,6 +16,7 @@ public class HomeWorkWithProperties extends TestBase {
     private static final String REPOSITORY = "eroshenkoam/allure-example";
 
     @Test
+    @Tag("hw11")
     public void testLambda() {
         AllureLifecycle lifecycle = Allure.getLifecycle();
         step("Открываем главную страницу", () -> {
