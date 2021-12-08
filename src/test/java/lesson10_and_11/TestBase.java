@@ -4,23 +4,33 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 //import helpers.Attach;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import config.CredentialsConfig;
+import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import static java.lang.String.format;
 
 public class TestBase {
+    public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+
     @BeforeAll
     static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()); // отображает все методы в Allure
         Configuration.startMaximized = true; // разворачивает браузер во все экран
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";//запуск в селенойде(?)
+        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
+        String login = credentials.login();
+        String password = credentials.password();
+        Configuration.remote = format("https://%s:%s@%s", login, password, url);
         //подключаем для selenoida свойства
         DesiredCapabilities capabilities = new DesiredCapabilities(); // описывает дополнительные характеристики для Web driver при помощи пары ключ-значение
         capabilities.setCapability("enableVNC", true); // включаем картику работы на удалённом рабочем столе
         capabilities.setCapability("enableVideo", true); // включаем запись видео
         Configuration.browserCapabilities = capabilities;
     }
-
 
     @AfterEach
     public void tearDown() {
