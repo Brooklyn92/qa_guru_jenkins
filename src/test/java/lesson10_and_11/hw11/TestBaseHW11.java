@@ -14,14 +14,17 @@ import static java.lang.String.format;
 
 public class TestBaseHW11 {
     public static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+    static String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
+    static String login = credentials.login();
+    static String password = credentials.password();
 
     @BeforeAll
     static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()); // отображает все методы в Allure
         Configuration.startMaximized = true; // разворачивает браузер во все экран
-        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
-        String login = credentials.login();
-        String password = credentials.password();
+       // String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub/");
+       // String login = credentials.login();
+       // String password = credentials.password();
         Configuration.remote = format("https://%s:%s@%s", login, password, url);
         //подключаем для selenoida свойства
         DesiredCapabilities capabilities = new DesiredCapabilities(); // описывает дополнительные характеристики для Web driver при помощи пары ключ-значение
